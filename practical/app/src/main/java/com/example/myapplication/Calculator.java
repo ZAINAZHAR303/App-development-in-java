@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,8 +15,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Calculator extends AppCompatActivity {
     EditText resultEditText;
+    Button btn;
     private double operand1 = 0;
     private String operator = "";
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +30,14 @@ public class Calculator extends AppCompatActivity {
             return insets;
         });
         resultEditText = findViewById(R.id.resultEditText);
+        btn = findViewById(R.id.nextbtn);
+
+        btn.setOnClickListener(view -> {
+            Intent intent = new Intent(Calculator.this, TipCalculator.class);
+            startActivity(intent);
+            finish();
+        });
+
     }
 
     // Method to handle number button clicks
@@ -82,4 +94,6 @@ public class Calculator extends AppCompatActivity {
         operand1 = 0;
         operator = "";
     }
+
+
 }
