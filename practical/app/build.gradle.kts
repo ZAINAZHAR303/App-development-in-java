@@ -38,6 +38,7 @@ dependencies {
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.airbnb.android:lottie:6.6.4")
+    implementation ("com.google.android.gms:play-services-maps:18.2.0")
     implementation(libs.activity)
 }
 
